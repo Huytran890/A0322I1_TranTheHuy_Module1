@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>simple_form</title>
 </head>
 <body>
-$END$
+    <form action="simpleform.html" method="post">
+        <h2>
+            Order form
+        </h2>
+        <p>
+            what would you like to buy?
+        </p>
+        <select>
+            <option> pizza: 20$ </option>
+            <option> garlic knots: 5$ </option>
+            <option> Salad: 10$ </option>
+            <option> Chicken wings: 15$ </option>
+        </select>
+        <p>
+            How many would you like to order?
+        </p>
+        <label> <input type="radio" name="quality" checked/> 1 </label> <br/>
+        <label> <input type="radio" name="quality" /> 2 </label> <br/>
+        <label> <input type="radio" name="quality" /> 3 </label> <br/>
+        <label> <input type="radio" name="quality" /> 4 </label> <br/>
+        <label> <input type="radio" name="quality" /> 5 </label> <br/>
+
+        <p>Name <span style="color: #ff0000">*</span> </p>
+        <input type="text" name="firstname" placeholder="firstname" size="20"/>
+        <input type="text" name="lastname" placeholder="lastname" size="20"/>
+        <p>Email</p>
+        <input type="text" name="email" placeholder="email" size="15"/>
+        <p>Phone Number</p>
+        <input type="number" name="phone number" placeholder="phone number" size="15"/>
+
+        <p><input type = "button" name="submit" value="Submit"/></p>
+
+        <form method="get" action="simpleform.html" class = "wufoo">
+
+    </form>
+
 </body>
 </html>
