@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <button type="button" onclick="areaOfRectangle1();">Area!</button>
+    <script>
+        function areaOfRectangle1() {
+            let inputWidth = prompt("Enter the width");
+            let inputHeight = prompt("Enter the height");
+            let area = parseFloat(inputWidth) * parseFloat(inputHeight);
+            document.write("The area is: " + area);
+        }
+    </script>
 </body>
 </html>
