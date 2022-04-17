@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c8acb90c-fa02-411d-9476-bd97ec68bc16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Bài_tập_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bài_tập_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_Cấu trúc điều kiện 2/Bài_tập/Bài_tập_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_Cấu trúc điều kiện 2/Bài_tập/Bài_tập_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_Cấu trúc điều kiện 2/Bài_tập/Bài_tập_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_Cấu trúc điều kiện 2/Bài_tập/mayTinh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_Cấu trúc điều kiện 2/Bài_tập/mayTinh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_Cấu trúc điều kiện 2/Thực_hành/Thực_hành_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9_Cấu trúc điều kiện 2/Thực_hành/Thực_hành_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bai_tap_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bai_tap_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Thuc_hanh/Thuc_hanh_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Thuc_hanh/Thuc_hanh_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_Biến, Kiểu dữ liệu và Toán tử/Thực_hành/Thực_hành_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_Biến, Kiểu dữ liệu và Toán tử/Thực_hành/Thực_hành_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss6_Biến, Kiểu dữ liệu và Toán tử/Thực_hành/myJs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/Bài_tập_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/Bài_tập_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/Bài_tập_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/Bài_tập_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/Bài_tập_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/Bài_tập_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/maytinh.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Bài_tập/maytinh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Thực_hành/Thực_hành_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Thực_hành/Thực_hành_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Thực_hành/Thực_hành_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss7_Biến, Kiểu dữ liệu và Toán tử/Thực_hành/Thực_hành_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss8_Cấu trúc điều kiện 1/Thực_hành/Thực_hành_5.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="27v8fUPEVbz95VlZy5kwLJZMpjX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8acb90c-fa02-411d-9476-bd97ec68bc16" name="Default Changelist" comment="" />
+      <created>1650189302478</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650189302478</updated>
+      <workItem from="1650189303750" duration="2574000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1650191906633">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1650191906633" />
+  </component>
+</project>
