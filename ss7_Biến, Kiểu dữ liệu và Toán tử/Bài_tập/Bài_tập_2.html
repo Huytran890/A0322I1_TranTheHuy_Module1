@@ -2,9 +2,167 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        button {
+            background-color: mediumpurple;
+            border: cyan;
+        }
+        .result{
+            text-align: center;
+            color: blue;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <table cellpadding="5" style="background-color: aquamarine">
+        <tr style="color: red">
+            <th>Amount</th>
+            <th>From Currently</th>
+            <th>To Currently</th>
+        </tr>
+        <tr>
+            <td>
+                <input id="input" type="text" value="1">
+            </td>
+            <td>
+                <select id="select 1">
+                    <option value="0">-- Choice --</option>
+                    <option value="1"> Vietnamese </option>
+                    <option value="2"> Euro </option>
+                    <option value="3"> Dollar </option>
+                    <option value="4"> Yuan </option>
+                    <option value="5"> Ruble </option>
+                    <option value="6"> Yen </option>
+                </select>
+            </td>
+            <td>
+                <select id="select 2">
+                    <option value="0">-- Choice --</option>
+                    <option value="1"> Vietnamese </option>
+                    <option value="2"> Euro </option>
+                    <option value="3"> Dollar </option>
+                    <option value="4"> Yuan </option>
+                    <option value="5"> Ruble </option>
+                    <option value="6"> Yen </option>
+                </select>
+            </td>
+            <td>
+                <button onclick="changeMoney()"> Convert </button>
+            </td>
+        </tr>
+        <tr>
+            <td class="result">Result:</td>
+            <td>
+                <input value="" id="nhap" type="text">
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function changeMoney() {
+            let nhap = document.getElementById("input").value;
+            let select1 = document.getElementById("select 1").value;
+            let select2 = document.getElementById("select 2").value;
+            // if(select1 == select2){
+            //     alert(nhap);
+            // }
+            if(select1 =="1" && select2 =="2"){
+                document.getElementById("nhap").value = nhap/ 24000;
+            }
+            if(select1 == "1" && select2 =="3"){
+                document.getElementById("nhap").value = nhap/ 23000;
+            }
+            if(select1 == "1" && select2 =="4"){
+                document.getElementById("nhap").value = nhap/ 3500;
+            }
+            if(select1 == "1" && select2 =="5"){
+                document.getElementById("nhap").value = nhap/ 267;
+            }
+            if(select1 == "1" && select2 =="6"){
+                document.getElementById("nhap").value = nhap/ 182;
+            }
+
+            if(select1 =="2" && select2 =="1"){
+                document.getElementById("nhap").value = nhap* 24000;
+            }
+            if(select1 == "2" && select2 =="3"){
+                document.getElementById("nhap").value = nhap* 1.08;
+            }
+            if(select1 == "2" && select2 =="4"){
+                document.getElementById("nhap").value = nhap* 6.89;
+            }
+            if(select1 == "2" && select2 =="5"){
+                document.getElementById("nhap").value = nhap* 88.01;
+            }
+            if(select1 == "2" && select2 =="6"){
+                document.getElementById("nhap").value = nhap* 137;
+            }
+
+            if(select1 =="3" && select2 =="1"){
+                document.getElementById("nhap").value = nhap* 23000;
+            }
+            if(select1 == "3" && select2 =="2"){
+                document.getElementById("nhap").value = nhap* 0.92;
+            }
+            if(select1 == "3" && select2 =="4"){
+                document.getElementById("nhap").value = nhap* 6.37;
+            }
+            if(select1 == "3" && select2 =="5"){
+                document.getElementById("nhap").value = nhap* 81.38;
+            }
+            if(select1 == "3" && select2 =="6"){
+                document.getElementById("nhap").value = nhap* 126;
+            }
+
+            if(select1 =="4" && select2 =="1"){
+                document.getElementById("nhap").value = nhap* 3.594;
+            }
+            if(select1 == "4" && select2 =="2"){
+                document.getElementById("nhap").value = nhap* 0.15;
+            }
+            if(select1 == "4" && select2 =="3"){
+                document.getElementById("nhap").value = nhap* 0.16;
+            }
+            if(select1 == "4" && select2 =="5"){
+                document.getElementById("nhap").value = nhap* 12.77;
+            }
+            if(select1 == "4" && select2 =="6"){
+                document.getElementById("nhap").value = nhap* 20;
+            }
+
+            if(select1 =="5" && select2 =="1"){
+                document.getElementById("nhap").value = nhap* 281;
+            }
+            if(select1 == "5" && select2 =="2"){
+                document.getElementById("nhap").value = nhap* 0.01;
+            }
+            if(select1 == "5" && select2 =="3"){
+                document.getElementById("nhap").value = nhap* 0.01;
+            }
+            if(select1 == "5" && select2 =="4"){
+                document.getElementById("nhap").value = nhap* 0.08;
+            }
+            if(select1 == "5" && select2 =="6"){
+                document.getElementById("nhap").value = nhap* 2;
+            }
+
+            if(select1 =="6" && select2 =="1"){
+                document.getElementById("nhap").value = nhap* 181;
+            }
+            if(select1 == "6" && select2 =="2"){
+                document.getElementById("nhap").value = nhap* 0.01;
+            }
+            if(select1 == "6" && select2 =="3"){
+                document.getElementById("nhap").value = nhap* 0.01;
+            }
+            if(select1 == "6" && select2 =="4"){
+                document.getElementById("nhap").value = nhap* 0.05;
+            }
+            if(select1 == "6" && select2 =="5"){
+                document.getElementById("nhap").value = nhap* 0.64;
+            }
+        }
+    </script>
 </body>
 </html>

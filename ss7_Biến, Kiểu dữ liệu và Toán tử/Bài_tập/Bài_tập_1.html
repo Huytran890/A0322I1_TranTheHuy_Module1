@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <div>
+        <button type="button" onclick="mediumScore();">MediumScore</button>
+    </div>
+    <br/>
+    <div>
+        <button type="button" onclick="temperature();">temperature</button>
+    </div>
+    <br/>
+    <div>
+        <button type="button" onclick="areaOfCircle();">areaOfCircle</button>
+    </div>
+    <br/>
+    <div>
+        <button type="button" onclick="circumferenceOfCircle();">CircumferenceOfCircle</button>
+    </div>
+
+    <script>
+        function mediumScore() {
+            let vatLy = prompt("Mời nhập điểm môn lý: ");
+            let hoaHoc = prompt("Mời nhập điểm môn hóa học: ");
+            let sinhHoc = prompt("Mời nhập điểm môn sinh học: ");
+            let mean = ( parseFloat(vatLy) + parseFloat(hoaHoc) + parseFloat(sinhHoc))/3;
+            alert("Điểm trung bình là: "+mean);
+        }
+        function temperature() {
+            let c= prompt("Mời nhập vào độ C: ");
+            let f = (9* parseFloat(c)/5)+32;
+            alert("Kết quả sau khi đổi độ là: "+f);
+        }
+        function areaOfCircle() {
+            let radius = prompt("Mời nhập bán kính hình tròn:");
+            const PI = 3.141;
+            let area = parseFloat(radius)*parseFloat(radius)*PI;
+            alert("Diện tích hình tròn là: "+area);
+        }
+        function circumferenceOfCircle() {
+            let radius = prompt("Mời nhập bán kính hình tròn:");
+            const PI = 3.141;
+            let circumference = parseFloat(radius)*2*PI;
+            alert("Chu vi hình tròn là: "+circumference);
+        }
+    </script>
 </body>
 </html>
