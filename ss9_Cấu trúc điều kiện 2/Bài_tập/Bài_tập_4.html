@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Do you love me?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+        }
+        #loveQuestion {
+            position: absolute;
+            left: 220px;
+            top: 230px;
+            font-size: 80px;
+        }
+        input {
+            width: 200px;
+            font-size: 30px;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+        }
+        #y {
+            position: absolute;
+            left: 480px;
+            top: 450px;
+            background-color: #7bd806;
+            cursor: pointer;
+        }
+        #n {
+            position: absolute;
+            left: 860px;
+            top: 450px;
+            background-color: #f4511e;
+            transition: 0.3s;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <h1 id="loveQuestion"> Do you love me ? </h1>
+    <input id="y" type = "button" value = " Yes " onclick="yesClick();" >
+    <input id="n" type="button" value= " No " onmouseover="noLover();">
+    <script>
+        function yesClick()
+        {
+            alert("Yes. you are right. ");
+        }
+        function noLover()
+        {
+            var x = Math.round(Math.random() * window.innerWidth);
+            var y = Math.round(Math.random() * window.innerHeight);
+            document.getElementById('n').style.left = x + 'px';
+            document.getElementById('n').style.top = y + 'px';
+        }
+    </script>
 </body>
 </html>

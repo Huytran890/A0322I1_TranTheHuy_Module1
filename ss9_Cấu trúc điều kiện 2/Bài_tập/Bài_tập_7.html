@@ -2,9 +2,203 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Changing temperature </title>
 </head>
 <body>
-$END$
+    <button onclick="changeTemperature();"> Bài 1 </button>
+    Chuyển đổi nhiệt độ <br/> <br/>
+    <button onclick="changeMettoFeet();"> Bài 2 </button>
+    Chuyển đổi mét sang feet <br/> <br/>
+    <button onclick="areaOfTriangle();"> Bài 3 </button>
+    Diện tích hình vuông <br/> <br/>
+    <button onclick="areaOfRectangle();"> Bài 4 </button>
+    Diện tích hình chữ nhật <br/> <br/>
+    <button onclick="dienTichTamGiacVuong();"> Bài 5 </button>
+    Diện tích tam giác vuông <br/> <br/>
+    <button onclick="phuongTrinhBac1();"> Bài 6 </button>
+    Giải phương trình bậc 1 <br/> <br/>
+    <button onclick="phuongTrinhBac2();"> Bài 7 </button>
+    Giải phương trình bậc 2 <br/> <br/>
+    <button onclick="kiemTraTuoi();"> Bài 8 </button>
+    Kiểm tra tuổi <br/> <br/>
+    <button onclick="xacDinhTamGiac();"> Bài 9 </button>
+    Xác định tam giác <br/> <br/>
+    <button onclick="tinhTienDien();"> Bài 10 </button>
+    Tính tiền điện <br/> <br/>
+    <button onclick="tinhThueThuNhapCaNhan();"> Bài 11 </button>
+    Tính thuế thu nhập cá nhân <br/> <br/>
+    <button onclick="tinhLaiXuatNganHang();"> Bài 12 </button>
+    Tính lãi xuất ngân hàng <br/> <br/>
+    <script>
+        function changeTemperature(){
+            let doC = prompt("Mời bạn nhập vào độ C: ");
+            let doF = parseFloat(doC) * 9/5 + 32;
+            alert("Độ F là: "+doF);
+        }
+        function changeMettoFeet() {
+            let met = prompt("Mời bạn nhập vào chiều dài đơn vị là met: ");
+            let feet = parseFloat(met) * 3.2808;
+            alert("Chiều dài bằng feet là: "+feet);
+        }
+        function areaOfTriangle() {
+            let canh = prompt("Mời bạn nhập vào cạnh của hình vuông: ");
+            let area = parseFloat(canh*canh);
+            alert("Diện tích hình vuông là: "+area);
+        }
+        function areaOfRectangle() {
+            let height = prompt("Mời bạn nhập vào chiều dài của hình chữ nhật: ");
+            let weight = prompt("Mời bạn nhập vào chiều rộng của hình chữ nhật: ");
+            let area = parseFloat(height) * parseFloat(weight);
+            alert("Area Of Rectangle is: "+area);
+        }
+        function dienTichTamGiacVuong() {
+            let canhGocvuong1 = prompt("Mời bạn nhập vào cạnh góc vuông thứ 1: ");
+            let canhGocvuong2 = prompt("Mời bạn nhập vào cạnh góc vuông thứ 2: ");
+            let area = 1/2 * parseFloat(canhGocvuong1) * parseFloat(canhGocvuong2);
+            alert("Diện tích tam giác vuông là: "+area);
+        }
+        // bx+c=0
+        function phuongTrinhBac1() {
+            let nhapB = parseFloat(prompt("Mời bạn nhập vào số b: "));
+            let nhapC = parseFloat(prompt("Mời bạn nhập vào số c: "));
+            if(nhapB == 0)
+                if(nhapC ==0)
+                    alert("Phương trình vô số nghiệm!");
+                else
+                    alert("Phương trình vô nghiệm!");
+            else {
+                let x = -nhapC / nhapB;
+                alert("Phương trình có nghiệm là: "+x);
+            }
+        }
+        //ax^2+bx+c=0
+        function phuongTrinhBac2() {
+            let nhapA = parseFloat(prompt("Mời bạn nhập vào số a: "));
+            let nhapB = parseFloat(prompt("Mời bạn nhập vào số b: "));
+            let nhapC = parseFloat(prompt("Mời bạn nhập vào số c: "));
+            if(nhapA == 0){
+                if(nhapB ==0)
+                    alert("Phương trình vô nghiệm!");
+                else{
+                    let x = -nhapC / nhapB;
+                    alert("Phương trình có một nghiệm: "+x);
+                }
+            }
+            // tinh delta
+            else
+            {
+                let delta = nhapB*nhapB - 4*nhapA*nhapC;
+                let x1,x2;
+                if(delta > 0)
+                {
+                    x1 = ((-(nhapB) + Math.sqrt(delta)) / (2*nhapA));
+                    x2 = ((-(nhapB) - Math.sqrt(delta)) / (2*nhapA));
+                    alert("Phương trình có 2 nghiệm là: "+"x1= "+x1 + " va x2= "+x2);
+                }
+                else if(delta == 0)
+                {
+                    x1 = (-(nhapB) / (2 * nhapA));
+                    alert("Phương trình có nghiệm kép là: " + "x1 = x2 = "+x1);
+                }
+                else
+                    alert("Phương trình vô nghiệm!");
+
+            }
+        }
+        function kiemTraTuoi() {
+            let tuoi = parseInt(prompt("Mời bạn nhập vào tuổi"));
+            if(tuoi>0 && tuoi <120)
+                alert("Tuổi của bạn là: "+tuoi);
+            else
+                alert("Bạn nhập vào sai tuổi!");
+        }
+        function xacDinhTamGiac() {
+            let a = parseInt(prompt("Mời bạn nhập vào cạnh a của tam giác: "));
+            let b = parseInt(prompt("Mời bạn nhập vào cạnh b của tam giác: "));
+            let c = parseInt(prompt("Mời bạn nhập vào cạnh c của tam giác: "));
+            if((a < 0) || (b < 0) || (c < 0) || (a + b <= c) || (a + c <= b) || (b + c <= a))
+                alert("Ba cạnh không tạo thành một tam giác!!!");
+            else
+            {
+                if((a == b) && (b == c) && (c == a))
+                    alert("-----Tạo thành tam giác đều-----");
+                else if (a == b || b == c || a==c)
+                    alert("-----Tạo thành tam giác cân-----");
+                else if ((b * b + c * c == a * a) || (a * a + c * c == b * b) || (a * a + b * b == c * c))
+                    alert("-----Tạo thành tam giác vuông-----");
+                else
+                    Salert("-----Tạo thành tam giác thường-----");
+            }
+            let i = a+b+c;
+            let j = i/2;
+            let k = Math.sqrt(j*(j-a)*(j-b)*(j-c));
+            alert("chu vi tam giac la: "+i);
+            alert("dien tich tam giac la: "+k);
+        }
+        function tinhTienDien() {
+            let soDien = parseFloat(prompt("Mời bạn nhập số điện của bạn (kwh): "));
+            let tienDien;
+            let bac1=1678, bac2=1734, bac3=2014, bac4=2536, bac5=2834, bac6=2927;
+            if(soDien<0){
+                alert("vui lòng nhập lại số điện, số điện không được nhỏ hơn 0");
+            }else if(soDien<=50){
+                tienDien=soDien*bac1;
+                alert("Bạn đã sử dụng điện trong khoảng 0 - 50 kWh, Số tiền bạn phải trả là: "+tienDien);
+            }else if(soDien<=100){
+                tienDien=50*bac1+((soDien-50)*bac2);
+                alert("Bạn đã sử dụng điện trong khoảng 51 - 100 kWh, Số tiền bạn phải trả là: "+tienDien);
+            }else if(soDien<=200){
+                tienDien=50*bac1+(50*bac2)+((soDien-100)*bac3);
+                alert("Bạn đã sử dụng điện trong khoảng 101 - 200 kWh, Số tiền bạn phải trả là: "+tienDien);
+            }else if(soDien<=300){
+                tienDien=50*bac1+(50*bac2)+(100*bac3)+((soDien-200)*bac4);
+                alert("Bạn đã sử dụng điện trong khoảng 201 - 300 kWh, Số tiền bạn phải trả là: "+tienDien);
+            }else if(soDien<=400){
+                tienDien=50*bac1+(50*bac2)+(100*bac3)+(100*bac4)+((soDien-300)*bac5);
+                alert("Bạn đã sử dụng điện trong khoảng 301 - 400 kWh, Số tiền bạn phải trả là: "+tienDien);
+            }else if(soDien>400){
+                tienDien=50*bac1+(50*bac2)+(100*bac3)+(100*bac4)+(100*bac5)+((soDien-400)*bac6);
+                alert("Bạn đã sử dụng điện trên 400 kWh, Số tiền bạn phải trả là: "+tienDien);
+            }
+        }
+        function tinhThueThuNhapCaNhan() {
+            let tienLuong = parseInt(prompt("Mời bạn nhập lương: "));
+            let soThue, luongThucTe,thueSuat;
+            if(tienLuong>15000000)
+            {
+                soThue = tienLuong * 30/100;
+                thueSuat = 30;
+            }
+            else if(tienLuong>=7000000)
+            {
+                soThue = tienLuong * 20/100;
+                thueSuat = 20;
+            }
+            else
+            {
+                soThue = tienLuong * 10/100;
+                thueSuat = 10;
+            }
+            luongThucTe = tienLuong - soThue;
+            alert("Lương = "+tienLuong);
+            alert("Thuế thu nhập với mức thuế suất là: "+thueSuat +"%");
+            alert("Số tiền lương bạn nhận là: "+luongThucTe);
+        }
+        // =P*(1+(k/m))^(m*n)   , fn= p(1+i/m)^n*m;
+        // Trong khi lãi suất được nhập gốc hàng quý, trong đó 1 năm sẽ có 4 quý.
+        //     Do đó, Fn = 973 x (1 + 5,6%/4)4.7 = 1.436.069.902 triệu đồng.
+        function tinhLaiXuatNganHang() {
+            let soTienBanDau = parseInt(prompt("Mời nhập số tiền ban đầu: "));
+            let laiSuat = parseFloat(prompt("Mời bạn nhập lãi xuất: "));
+            let soLanGhepLai = parseInt(prompt("Mời bạn nhập số lần ghép lãi: "));
+            let kyHan = parseInt(prompt("Mời bạn nhập kỳ hạn vay: "));
+            let soTienNhanDuoc = soTienBanDau * Math.pow((1 + (laiSuat / soLanGhepLai)),(kyHan * soLanGhepLai));
+            let soTienLaiDuoc = soTienNhanDuoc - soTienBanDau;
+            alert("Lãi kép sau " + kyHan + " năm là : "+soTienLaiDuoc);
+            alert("Số tiền có được sau " + kyHan + " năm là: "+soTienNhanDuoc);
+        }
+    </script>
+
+
 </body>
 </html>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Calculate weight index </title>
 </head>
 <body>
-$END$
+    <script>
+        let height = prompt("Mời bạn nhập chiều cao: ");
+        let weight = prompt("Mời bạn nhập cân nặng: ");
+        let bim = parseFloat(weight) / (parseFloat(height) ^ 2);
+        if (bim < 18.5)
+            document.write("Underweight");
+        else if (bim < 25.0)
+            document.write("Normal");
+        else if (bim < 30.0)
+            document.write("Overweight");
+        else
+            document.write("Obese!");
+    </script>
+
 </body>
 </html>

@@ -2,9 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>practising 1</title>
 </head>
 <body>
-$END$
+    <button type="button" onclick="kiemTraChiaHet();"> bài 1 </button>
+    kiểm tra chia hết <br/> <br/>
+    <button type="button" onclick="kiemTraDuTuoi();"> bài 2 </button>
+    Kiểm tra đủ tuổi vào lớp 10. <br/> <br/>
+    <button type="button" onclick="kiemTraSoNhoHoacLonHonSo0();"> bài 3 </button>
+    Kiểm tra số nhập vào so sánh với số 0. <br/> <br/>
+    <button type="button" onclick="kiemTraSoLonNhat();"> bài 4 </button>
+    Kiểm tra số lớn nhất trong 3 số nguyên. <br/> <br/>
+    <button type="button" onclick="xepHangHocLuc();"> bài 5 </button>
+    Xếp hạng học lực của học sinh. <br/> <br/>
+    <button type="button" onclick="tinhTienHoaHong();"> bài 6 </button>
+    Tính tiền hoa hồng. <br/> <br/>
+    <button type="button" onclick="tinhTongTienCuocDienThoai();"> bài 7 </button>
+    Tính cước điện thoại cho một hộ gia đình. <br/> <br/>
+    <script>
+        function kiemTraChiaHet(){
+            let a = prompt("Mời bạn nhập số thứ 1: ");
+            let b = prompt("Mời bạn nhập số thứ 2: ");
+            if(parseFloat(a) % parseFloat(b) == 0)
+                alert(a+ " chia hết cho " +b);
+            else
+                alert(a+ " không chia hết cho " +b);
+        }
+        function kiemTraDuTuoi() {
+            let tuoi = prompt("MỜi nhập vào tuổi của bạn: ");
+            if(tuoi < 15)
+                alert("Bạn chưa đủ tuổi học lớp 10!");
+            else
+                alert("Bạn đủ tuổi để học lớp 10.");
+        }
+        function kiemTraSoNhoHoacLonHonSo0() {
+            let number = prompt("Mời bạn nhập vào một số: ");
+            if(number > 0)
+                alert("Số " +number+ "lớn hơn số 0");
+            else if(number = 0)
+                alert("Số " +number+ "bằng số 0");
+            else
+                alert("Số " +number+ "nhỏ hơn số 0");
+        }
+        function kiemTraSoLonNhat() {
+            let max;
+            let number1 = prompt("Mời bạn nhập số thứ 1: ");
+            let number2 = prompt("Mời bạn nhập số thứ 1: ");
+            let number3 = prompt("Mời bạn nhập số thứ 1: ");
+            max = number1;
+            if(max == number2)
+                max == number2;
+            if(max == number3)
+                max == number3;
+            alert("Số lớn nhất là: "+max);
+        }
+        function xepHangHocLuc() {
+            let diemBaiKiemTra = prompt("Mời bạn nhập điểm bài kiểm tra: ");
+            let diemThiGiuaKy = prompt("Mời bạn nhập điểm thi giữa kỳ: ");
+            let diemThiCuoiKy = prompt("Mời bạn nhập điểm thi cuối kỳ: ");
+            let trungbinh = (diemBaiKiemTra + diemThiGiuaKy + diemThiCuoiKy) /3;
+            if(trungbinh >= 9.0)
+                alert("-----Học sinh hạng A------");
+            else if((trungbinh >= 7.0) && (trungbinh < 9.0))
+                alert("-----Học sinh hạng B------");
+            else if((trungbinh >= 5.0) && (trungbinh < 7.0))
+                alert("-----Học sinh hạng C------");
+            else if((trungbinh >= 3.0) && (trungbinh < 5.0))
+                alert("-----Học sinh hạng E------");
+            else if(trungbinh < 3.0)
+                alert("-----Học sinh hạng F------");
+            else
+               alert("Invaled value!!!");
+        }
+        //  QUY ƯỚC:
+        // 5% nếu tổng doanh số trong 1 ngày nhỏ hơn hoặc bằng 100 triệu.
+        // 10% nếu tổng doanh số trong 1 ngày nhỏ hơn hoặc bằng 300 triệu.
+        // 20 % nếu tổng doanh số trong 1 ngày là lớn hơn 300 triệu.
+        function tinhTienHoaHong() {
+            let doanhThu = prompt("Mời bạn nập vào doanh số bán hàng trong 1 ngày: ");
+            let tienHoaHong;
+            if (doanhThu <= 100000000) {
+                tienHoaHong = doanhThu * 5 / 100;
+                alert("Tiền hoa hồng là: " + tienHoaHong)
+            }
+            if (doanhThu <= 200000000) {
+                tienHoaHong = doanhThu * 10 / 100;
+                alert("Tiền hoa hồng là: " + tienHoaHong)
+            }
+            if (doanhThu <= 300000000) {
+                tienHoaHong = doanhThu * 20 / 100;
+                alert("Tiền hoa hồng là: " + tienHoaHong)
+            }
+        }
+        function tinhTongTienCuocDienThoai() {
+            let phiCoDinh = 25000;
+            let tongTien;
+            let soPhut = prompt("Mời nhập vào số phút bạn gọi trong tháng: ");
+            if(soPhut > 200)
+                tongTien = ((soPhut-200)*200+150*400+50*600) + 25000;
+            else if(soPhut > 50)
+                tongTien = ((soPhut - 50)*400 + (50*600)) + 25000;
+            else
+                tongTien = (soPhut*600) + 25000;
+            alert("bạn đã gọi " +soPhut+ " phút");
+            alert("Số tiền bạn phải trả là: "+tongTien);
+        }
+
+
+    </script>
+
 </body>
 </html>
