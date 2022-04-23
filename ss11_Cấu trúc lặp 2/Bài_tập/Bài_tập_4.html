@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" onclick="tinhGiaiThua()"> Bài 2 </button>
+    Tìm giai thừa <br> <br>
+    <button type="button" onclick="inTamGiac()"> Bài 3 </button>
+    In ra tam giác <br> <br>
+    <button type="button" onclick="inHinhVuong(5,5)"> Bài 4 </button>
+    In ra hình vuông <br> <br>
+    <button type="button" onclick="tinhLaiXuatNganHang()"> Bài 5 </button>
+    Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng. <br> <br>
+    <button type="button" onclick="drawheart(7,7)"> Bài 6 </button>
+    In hình trái tim <br> <br>
+    <script>
+        function tinhGiaiThua() {
+            let num = parseInt(prompt("Nhập một số để tính giai thừa"));
+            let giaiThua = 1;
+            if(num < 0){
+                alert("Error!");
+            }else if(num <= 1){
+                giaiThua = 1;
+            }else{
+                for (let i=1;i<=num;i++) {
+                    giaiThua = giaiThua * i;
+                }
+            }
+            document.write("Giai thừa của "+num+" = "+giaiThua)
+        }
+
+        function inTamGiac() {
+            let numberOfStars = parseInt(prompt("Nhập số dòng hiển thị sao: "));
+            for (let i = 0; i < numberOfStars; i++) {
+                for (let j = 0; j <= i; j++) {
+                    let stars = "*";
+                    document.write(stars);
+                }
+                document.write("<br>");
+            }
+
+            document.write("<br>" + "<br>");
+
+
+            for (let i = numberOfStars; i > 0; i--) {
+                for (let j = 0; j < i; j++) {
+                    let stars = "*";
+                    document.write(stars);
+                }
+                document.write("<br>");
+            }
+
+            document.write("<br>" + "<br>");
+
+
+            for (let i = 0; i < numberOfStars; i++) {
+                for (let j = i; j <= numberOfStars - 1; j++) {
+                    document.write("<a style='color: white'>*<a>");
+                }
+                for (let j = 0; j <= i; j++) {
+                    let stars = "*";
+                    document.write(stars);
+                }
+                document.write("<br>");
+            }
+            document.write("<br>" + "<br>");
+
+
+            for (let i = 0; i < numberOfStars; i++) {
+                for (let j = 0; j < i; j++) {
+                    document.write("<a style='color: white'>*<a>");
+                }
+                for (j = i; j < numberOfStars; j++) {
+                    let stars = "*";
+                    document.write(stars);
+                }
+                document.write("<br>");
+            }
+            document.write("<br>" + "<br>");
+        }
+
+        function inHinhVuong(m,n) {
+            let a = " ";
+            for (let i=0; i<m; i++){
+                for (let j = 0; j<n; j++) {
+                    if (i == 0 || i == m - 1 || j == 0 || j == n - 1)
+                        document.write("<a style='color: blue'>     *     <a>");
+                    else
+                        document.write("<a style='color: white'>     *     <a>");
+                }
+                document.write("<br>");
+            }
+        }
+
+        // =P*(1+(k/m))^(m*n)  , fn= p(1+i/m)^n*m;
+        // Trong khi lãi suất được nhập gốc hàng quý, trong đó 1 năm sẽ có 4 quý.
+        //     Do đó, Fn = 973 x (1 + 5,6%/4)4.7 = 1.436.069.902 triệu đồng.
+        function tinhLaiXuatNganHang() {
+            let soTienBanDau = parseInt(prompt("Mời nhập số tiền ban đầu: "));
+            let laiSuat = parseFloat(prompt("Mời bạn nhập lãi xuất: "));
+            let soLanGhepLai = parseInt(prompt("Mời bạn nhập số lần ghép lãi: "));
+            let kyHan = parseInt(prompt("Mời bạn nhập kỳ hạn vay: "));
+            let soTienNhanDuoc = soTienBanDau * Math.pow((1 + (laiSuat / soLanGhepLai)),(kyHan * soLanGhepLai));
+            let soTienLaiDuoc = soTienNhanDuoc - soTienBanDau;
+            alert("Lãi kép sau " + kyHan + " năm là : "+soTienLaiDuoc);
+            alert("Số tiền có được sau " + kyHan + " năm là: "+soTienNhanDuoc);
+        }
+
+        function drawheart(m,n) {
+            let i // cot,j // hang;
+            for(i=1; i<=7; i++){
+                for(j=1; j<=7; j++){
+                    if(!((i==1 && (j==1 || j==4 || j==7))
+                        || (i==5 && (j==1 || j==7))
+                        || (i==6 && (j<=2 || j>=6 ))
+                        || (i==7 && (j<=3 || j>=5))))
+                        document.write("<a style='color: red'>          *          <a>");
+                    else
+                        document.write("<a style='color: white'>          *          <a>");
+                }
+                document.write("<br>");
+            }
+        }
+    </script>
+</body>
+</html>

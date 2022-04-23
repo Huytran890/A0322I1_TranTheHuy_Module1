@@ -2,9 +2,159 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <br><input type="button" value="Bài 1" onclick="ex1();">Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộng thoại thông báo
+    <br><input type="button" value="Bài 2" onclick="ex2();"> Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    <br><input type="button" value="Bài 3" onclick="ex3(10);">Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    <br><input type="button" value="Bài 4" onclick="ex4(10);"> Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+    <br><input type="button" value="Bài 5" onclick="ex5();">Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+    <br><input type="button" value="Bài 6" onclick="ex6();"> Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+    <br><input type="button" value="Bài 7" onclick="ex7();">Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+    <br><input type="button" value="Bài 8" onclick="ex8();"> Game đoán số
+    <script>
+        function ex1(){
+            // Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộng thoại thông báo
+            let cout=0;
+            let temp ='';
+            while( cout!=99 ){
+                temp = temp + " " + cout;
+                cout++;
+            }
+            document.write("Already Completed!. the number counted is "+temp);
+        }
+
+        function ex2() {
+            do {
+                temperature = parseInt(prompt("Please enter the temperature: "));
+            }
+            while (temperature < 0);
+            if (temperature<20) {
+                alert("Increase the temperature.")
+            } else if (temperature>100) {
+                alert("Decrease the temperature.")
+            } else
+                alert("Good!");
+        }
+
+        function ex3(num) {
+            // Hiển thị ra n số đầu tiên trong dãy fibonacci.
+            let fn = 0 , f0= 0, f1=0;
+            let temp = "";
+            for (let i=0; i<num;i++){
+                if(i==0){
+                    fn=1
+                    f1=1
+                    temp += fn+ " ";
+                }else{
+
+                    fn= f0+f1;
+                    f0 = f1;
+                    f1 = fn;
+                    temp += fn+ " ";
+                }
+            }
+            document.write(temp);
+        }
+
+        function ex4(n){
+            // Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+            let fn = 0 , f0= 0, f1=0;
+            let chia5 = "";
+            let fibonacci = "";
+            for (let i=0; i<n;i++){
+                if(i==0){
+                    fn=1;
+                    f1=1;
+                    fibonacci += fn + " ";
+                }else{
+
+                    fn= f0+f1;
+                    f0 = f1;
+                    f1 = fn;
+                    fibonacci += fn + " ";
+                    console.log(i +" = "+fn);
+                    if(fn%5==0){
+                        chia5 = fn;
+                        break;
+                    }
+                }
+            }
+            document.write("Sô chia hết cho 5 trong dãy là "+chia5);
+        }
+        function ex5() {
+            // Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+            let fn = 0 , f0= 0, f1=0, sum=0
+            let fibonacci = "";
+            for (let i=0; i<20;i++){
+                if(i==0){
+                    fn=1;
+                    f1=1;
+                    fibonacci += fn + " ";
+                    sum += fn;
+                }else{
+                    fn= f0+f1;
+                    f0 = f1;
+                    f1 = fn;
+                    fibonacci += fn + " ";
+                    sum += fn;
+                    console.log(i +" = "+fn);
+                }
+            }
+            document.write("Dãy Fibonacci là "+fibonacci+"<br>");
+            document.write("Tổng của các số = "+sum);
+        }
+
+        function ex6() {
+            let count = 0, sum =0;
+            let numberSequence ="";
+            for (let i=1; ; i++){
+                if(i%7==0){
+                    numberSequence += i+" ";
+                    console.log(numberSequence);
+                    sum += i;
+                    count++;
+                    if(count==30) break;
+                }
+            }
+            document.write(numberSequence+"<br>");
+            document.write("Tổng bằng "+sum);
+        }
+
+        function ex7() {
+            for (let i=1; i<=100; i++){
+                if (i%3 == 0 && i%5 == 0){
+                    document.write(i+" FizzBuzz" +"<br>")
+                }else {
+                    if (i%3 == 0){
+                        document.write(i+" Fizz" +"<br>")
+                    }
+                    else if(i%5 == 0){
+                        document.write(i+" Buzz" +"<br>")
+                    }
+                }
+            }
+        }
+
+        function ex8() {
+            let range = parseInt(prompt("Trò chơi đoán số từ 0 - "));
+            let number = parseInt(prompt("Nhập vào số muốn đoán "));
+            let numberRandom;
+            if (range) {
+                numberRandom = Math.floor(Math.random() * range);
+                if (numberRandom == number) {
+                    alert("Bạn đã đoán đung");
+                } else {
+                    while (numberRandom != number) {
+                        alert("Bạn đoán sai. ");
+                        number = parseInt(prompt("Nhập vào số muốn đoán tiếp theo: "));
+                    }
+                    alert("Bạn đoán đúng");
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>

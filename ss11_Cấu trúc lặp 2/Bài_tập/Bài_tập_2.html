@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Hiển thị các số nguyên tố đầu tiên </title>
 </head>
 <body>
-$END$
+<script>
+    function checkPrimeNumbers(n) {
+        if (n < 2) {
+            return false;
+        }
+        let squareRoot = parseInt(Math.sqrt(n));
+        for (var i = 2; i <= squareRoot; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    var n = prompt("Nhập số nguyên tố đầu tiên bạn muốn in ra" );
+    var count = 0;
+    var number = 2;
+    let result ='';
+    while ( count < n) {
+        if (checkPrimeNumbers(number)) {
+            count ++;
+            result = result + "  " +number;
+        }
+        number++;
+    }
+    document.write(result);
+</script>
 </body>
 </html>
