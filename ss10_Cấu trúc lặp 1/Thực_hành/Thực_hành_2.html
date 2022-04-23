@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <button onclick="text1()"> text1 </button> <br/>
+    <button onclick="text2()"> text2 </button>
+    <script>
+        function text1() {
+            let num = parseInt(prompt("Enter a number: "));
+            let total =0;
+            let dem =0;
+            while(num != -1){
+                total = total + num ;
+                num = parseInt(prompt("Enter continue a number "));
+                dem++;
+                document.write("Tổng lần thứ "+dem+ " là "+total +"<br/>");
+            }
+        }
+        function text2() {
+            let i = 1;
+            while (i < 100) {
+                document.write("<hr width = " + i + "%>");
+                i++;
+            }
+        }
+
+
+
+    </script>
+
 </body>
 </html>

@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Thực hành 1</title>
 </head>
 <body>
-$END$
+    <h1> JavaScript Loop </h1>
+    <p id="demo"></p>
+    <button onclick="text2()"> text2 </button>
+    </div>
+    <script>
+        function text1(){
+            let text ="";
+            let i;
+            for(i=0; i<5; i++)
+                text += "the number is" +i + "<br/>";
+            document.getElementById("demo").innerHTML = text;
+        }
+        function text2() {
+            let number = parseInt(prompt("Mời bạn nhập vào một số: "));
+            let total =0;
+            for(i=0 ; i<number; i++)
+                total = total + i;
+            alert("Tổng là: "+total);
+        }
+    </script>
 </body>
+
+
 </html>
