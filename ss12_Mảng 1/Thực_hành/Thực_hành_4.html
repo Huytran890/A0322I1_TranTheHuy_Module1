@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tìm số lớn nhất trong mảng </title>
+</head>
+<body>
+    <input style="background-color: greenyellow" type="button"  value="click" onclick="findMaxInArray();"/> Find the max value in array.
+    <script>
+        function findMaxInArray(){
+            // let numbers = [-3, 5, 1, 3, 2, 10];
+            let numbers = window.prompt("please enter the value in array: ");
+            let str = numbers.toString();
+            let max = numbers[0];
+            let index = 0;
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] > max) {
+                    max = numbers[i];
+                    index = i;
+                }
+            }
+            alert("max: " + max + " at position " + index);
+        }
+    </script>
+
+
+</body>
+</html>

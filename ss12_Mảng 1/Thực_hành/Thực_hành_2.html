@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Reverse The Array </title>
+    <input style="background-color: red" type="button" value="Click" onclick="reverseArray();"/> Reverse the Array.
+</head>
+<body>
+    <script>
+        function reverseArray(){
+            // let originalArray = [1,2,3,4,5];
+            let originalArray = window.prompt("please enter the value in array :");
+            let str = originalArray.toString();
+            let newArray =[];
+            for (let i = originalArray.length - 1; i >= 0; i--) {
+                newArray.push( originalArray[i] );
+            }
+            document.write("The original array is: "+originalArray +"<br/>"+"<br/>");
+            document.write("The new array is: "+newArray);
+        }
+    </script>
+
+</body>
+</html>

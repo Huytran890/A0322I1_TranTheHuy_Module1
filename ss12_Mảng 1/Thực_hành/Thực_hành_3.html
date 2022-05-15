@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Tìm giá trị trong mảng </title>
+</head>
+<body>
+    <input style="background-color: lightskyblue" type="button" value="Click" onclick="findTheValueInArray();"/> Find the value is available in array.
+    <script>
+        function findTheValueInArray() {
+            let value = prompt("Enter a number: ");
+            let numbers = [-3, 5, 1, 3, 2, 10];
+            for (let i = 0; i < numbers.length; i++) {
+                    if (value == numbers[i]) {
+                        alert("Value " + numbers[i] + " found at " + i);
+                    }
+                }
+        }
+    </script>
+
+</body>
+</html>
