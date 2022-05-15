@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <input type="button" value="Click" onclick="describe()"> Tìm giá trị nhỏ nhất của mảng nhập vào.
+    <script>
+        function describe(){
+            let arr = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+            for (let i=0; i<n; i++){
+                arr[i] = Number(prompt("Enter numbers into array: "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+            let temp = minArray(arr);
+            document.write("The smallest value in the array is: [" +temp+ "].");
+        }
+
+        function minArray(arr) {
+            if(arr.length == 0)
+                return -1;
+            else{
+                let min = arr[0];
+                for(let i = 1; i < arr.length; i++){
+                    if(arr[i] < min){
+                        min = arr[i];
+                    }
+                }
+                return min;
+            }
+        }
+    </script>
+
 </body>
 </html>
