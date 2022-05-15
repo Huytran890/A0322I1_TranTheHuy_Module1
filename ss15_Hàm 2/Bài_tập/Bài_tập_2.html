@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 2 </title>
+</head>
+<body>
+    <h2> Convert between feet and meters </h2>
+    <input type="text" id="input" placeholder="Number">
+    <select id="choice">
+        <option value="feet">Feet</option>
+        <option value="meters">Meters</option>
+    </select>
+    <input type="button" value="check" onclick="output()">
+    <br/>
+    Result: <span id="result"></span>
+    
+    <script>
+        function changeFeetToMeters(feet) {
+            let meters = feet * 0.305;
+            return meters;
+        }
+
+        function changeMetersToFeet(meters) {
+            let feet = meters * 3.279;
+            return feet;
+        }
+        
+        function output() {
+            let choice = document.getElementById("choice");
+            let value = document.getElementById("input");
+            let result = 0;
+            if(choice.value == 'feet'){
+                result = changeFeetToMeters(value.value);
+                document.getElementById("result").innerHTML = "The value after changing is: " +result+ "\t meters.";
+            }
+            else{
+                result = changeMetersToFeet(value.value);
+                document.getElementById("result").innerHTML = "The value after changing is: " +result+ "\t feet.";
+            }
+        }
+    </script>
+
+</body>
+</html>

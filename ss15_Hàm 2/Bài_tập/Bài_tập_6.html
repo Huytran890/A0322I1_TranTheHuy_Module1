@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Kiểm tra từ đối xứng </title>
+</head>
+<body>
+    <h2> Check words symmetry </h2>
+    Input: <input type="text" placeholder="Words" id="input">
+    <input type="button" value="check" onclick="isPalindrome()">
+    <br/><br/>
+    Result: <span id="result"></span>
+    <br/><br/>
+    Describe: <span id="result1"></span>
+
+    <script>
+        let string='';
+        this.result = document.getElementById("result");
+        let newString= "";
+        let check;
+        function isPalindrome() {
+            let origin = document.getElementById("input").value;
+            string = string + origin;
+            this.result.innerHTML = "The original array is: "+string;
+            let long = string.length -1;
+            for (let i=0;i<string.length;i++){
+                if (string[i] == string[long]) {
+                    long--
+                    check = true;
+                }else{
+                    check = false
+                    break;
+                }
+            }
+            if (check == true){
+                document.getElementById("result1").innerHTML = string +" is the word symmetry.";
+            }else {
+                document.getElementById("result1").innerHTML = string + " is not the word symmetry!";
+            }
+        }
+
+    </script>
+</body>
+</html>

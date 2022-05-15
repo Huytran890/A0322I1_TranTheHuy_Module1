@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 4 </title>
+</head>
+<body>
+    <input type="button" value="Bài 1" onclick="ex1()"> Viết hàm tính bình phương của một số bất kỳ được đưa vào.
+    <br/> <br/>
+    <input type="button" value="Bài 2" onclick="ex2()"> Viết hàm tính diện tích, hàm tính chu vi hình tròn.
+    <br/> <br/>
+    <input type="button" value="Bài 3" onclick="ex3()"> Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.
+    <br/> <br/>
+    <input type="button" value="Bài 4" onclick="ex4()"> Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
+    <br/> <br/>
+    <input type="button" value="Bài 5" onclick="ex5()"> Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    <br/> <br/>
+    <input type="button" value="Bài 6" onclick="ex6()"> Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+    <br/> <br/>
+    <input type="button" value="Bài 7" onclick="ex7()"> Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    <br/> <br/>
+    <input type="button" value="Bài 8" onclick="ex8()"> Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    <br/> <br/>
+    <script>
+        // Bài 1
+        function calculateSquare(number) {
+            let squareNumber = number * number;
+            return squareNumber;
+        }
+        function ex1() {
+            let number = Number(prompt("please enter a number: "));
+            let squareNumber = calculateSquare(number);
+            document.write("Square of number is: "+squareNumber);
+        }
+        // Bài 2
+        function areaOfCircle(radius,PI) {
+            let area = radius * radius * PI;
+            return area;
+        }
+        function circumferenceOfCircle(radius,PI) {
+            let circumference = 2 * PI * radius;
+            return circumference;
+        }
+        function ex2() {
+            let radius = Number(prompt("please enter the radius: "));
+            const PI = 3.14;
+            document.write("The area of circle is: " +areaOfCircle(radius,PI)+ "<br>");
+            document.write("The circumference of circle is: "+circumferenceOfCircle(radius,PI));
+        }
+        // Bài 3
+        function factorial(number) {
+            let factorial = 1;
+            if(number >= 1){
+                for (let i=1; i<=number; i++){
+                    factorial = factorial * i;
+                }
+            }else if(number == 0 ){
+                factorial = 1 ;
+            }else{
+                return "Invaled Error!!!";
+            }
+            return factorial;
+        }
+
+        function ex3() {
+            let number = Number(prompt("Please enter the number: "));
+            let calculate = factorial(number);
+            document.write("The factorial of " +number+ " = "+calculate);
+        }
+        // Bài 4
+        function checkValue(value) {
+            if(value % 2 == 0 || value % 2 == 1){
+                return false;
+            }
+            return true;
+        }
+        function ex4() {
+            let value = prompt("please enter the value: ");
+            let check = checkValue(value);
+            if (check){
+                document.write("The " +value+ " is a string.");
+            }
+            else{
+                document.write("The " +value+ " is a number.");
+            }
+        }
+        // Bài 5
+        function checkMinValue(number1,number2,number3) {
+            let min = number1;
+            if(number2 < min)
+                min = number2;
+            if(number3 < min)
+                min = number3;
+            return min;
+        }
+        function ex5() {
+            let number1 = Number(prompt("please enter the first number: "));
+            let number2 = Number(prompt("please enter the second number: "));
+            let number3 = Number(prompt("please enter the third number: "));
+            document.write("The min value is: "+checkMinValue(number1,number2,number3));
+        }
+        // Bài 6
+        function checkInteger(number) {
+            if(number > 0)
+                return true;
+            return false;
+        }
+        function ex6() {
+            let number = Number(prompt("Please enter the number: "));
+            if(checkInteger(number) == true)
+                document.write("The number is a integer.");
+            else
+                document.write("The number is a negative integer");
+        }
+        // Bài 7: chỉ nhập 2 số.
+        function ex7() {
+            let arr = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+            for(let i=0 ;i<n; i++){
+                arr[i] = Number(prompt("Enter numbers into array "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+            document.write("The array after reversing is: [" +reverse2Number(arr)+ "]");
+        }
+        function reverse2Number(arr) {
+            arr.reverse();
+            return arr;
+        }
+        // Bài 8: nhập vào 1 dãy số.
+        function ex8() {
+            let arr = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+            for(let i=0 ;i<n; i++){
+                arr[i] = Number(prompt("Enter numbers into array "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+            document.write("The array after reversing is: [" +reverseTheArray(arr)+ "]");
+        }
+        function reverseTheArray(arr) {
+            arr.reverse();
+            return arr;
+        }
+    </script>
+
+</body>
+</html>

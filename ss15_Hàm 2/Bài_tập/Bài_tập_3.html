@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Exercise 3 </title>
+</head>
+<body>
+    <input type="button" value="Bài 1" onclick="alertMessage()"> Hiển thị hộp thoại chứa chuỗi xin chào.
+    <br> <br>
+    <input type="button" value="Bài 2" onclick="displayNumber(5)"> Nhập số và hiển thị số.
+    <br> <br>
+    <input type="button" value="Bài 3" onclick="sumOf2Number(5,3)">  Nhập số thích hợp để tính tổng.
+    <br> <br>
+    <input type="button" value="Bài 4" onclick="displayEx4()"> Thêm hàm alert() vào đoạn mã.
+    <br> <br>
+    <input type="button" value="Bài 5" onclick="findTheStar()"> Nhập tên ngôi sao và xuất ra chòm sao tương ứng.
+    <br> <br>
+    <script>
+        // Bài 1
+        function alertMessage() {
+            let message = alert("Hello");
+            return message;
+        }
+        // Bài 2
+        function displayNumber(number) {
+            number++;
+            document.write("The number is displayed: "+number);
+        }
+        // Bài 3
+        function sumOf2Number(a,b) {
+            if(a>b)
+                document.write("Value a > b please re-enter!");
+            else
+                document.write("Sum of " +a+ " + " +b+ " = " +(a+b) );
+        }
+        //bài 4
+        function addNumbers() {
+            let firstNumber = 4;
+            let secondNumber = 8;
+            let result = firstNumber + secondNumber;
+            document.write("The Resulting variable after adding is:  "+result +"<br/>");
+            return result;
+        }
+        function displayEx4(){
+            let result = 0;
+            result = addNumbers();
+            document.write("The Resulting variable after returning is: "+result);
+        }
+        // Bài 5
+        function stars(star) {
+            let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+            let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+            for (let i=0; i<star1.length ; i++){
+                if(star == star1[i])
+                    return star2[i];
+            }
+            return "";
+        }
+        function findTheStar() {
+            let nameStar = prompt("Please enter the star name: ");
+            let findStar = stars(nameStar);
+                if (findStar == "")
+                    document.write("No star found!");
+                else
+                    document.write("Corresponding star name of " + nameStar + " is: " + findStar);
+        }
+
+    </script>
+
+</body>
+</html>
