@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Temperature </title>
 </head>
 <body>
-$END$
+    <script>
+        class Temperature{
+            constructor(Celsius) {
+                this.Celsius = Celsius;
+            }
+            setCelsius(newCelsius){
+                this.Celsius = newCelsius;
+            }
+            getCelsius(){
+                return this.Celsius;
+            }
+            changeCtoF() {
+                return ((this.Celsius * 1.8) + 32);
+            }
+            changeCtoK() {
+                return this.Celsius + 273.15;
+            }
+        }
+        let temperature = Number(prompt("Please enter the temperature: "));
+        let temp = new Temperature(temperature);
+        if(temperature > -273){
+            document.write("Celsius temperature is: "+temp.getCelsius() +"<br>");
+            document.write("Fahrenheit temperature is: "+temp.changeCtoF() +"<br>");
+            document.write("Kelvin  temperature is: "+temp.changeCtoK());
+        }
+        else
+            document.write("invaled temperature! Please enter again.");
+    </script>
+
 </body>
 </html>

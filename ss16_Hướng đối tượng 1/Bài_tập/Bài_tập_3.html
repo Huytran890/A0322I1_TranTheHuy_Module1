@@ -1,10 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>[Bài tập] Xây dựng lớp mô tả điện thoại</title>
 </head>
+
 <body>
-$END$
+<script>
+    class Mobile {
+        constructor(name, origin, price) {
+            this.name = name;
+            this.orgin = origin;
+            this.price = price;
+            this.contextMess = '';
+            this.receiveBox = '';
+        }
+        this.contextMess = '';
+        this.receiveBox = '';
+        setPowerOfPin(newPower) {
+            this.power = newPower;
+        }
+
+        getPowerOfPin() {
+            return this.power.getCapacity();
+        }
+
+        setName(newName) {
+            this.name = newName;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setOrigin(newOrigin) {
+            this.orgin = newOrigin;
+        }
+
+        getOrigin() {
+            return this.orgin;
+        }
+
+        setPrice(newPrice) {
+            this.price = newPrice;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        turnOn() {
+            return this.isOn = true;
+        }
+        turnOff(){
+            return this.isOn = false;
+        }
+        charge (time) {
+            if (this.power < 100) {
+                return this.power += time;
+            }
+        }
+        consume () {
+            this.power -= 1;
+        }
+        typingMess(str) {
+            if (!this.isOn) {
+                return 0;
+            } else {
+                return this.contextMess += str;
+                this.consume();
+            }
+
+        }
+        receiveMess(contextMess) {
+            if (!this.isOn) {
+                return 0;
+            } else {
+                this.receiveBox += contextMess;
+                this.consume();
+            }
+        }
+    }
+
+        class Pin{
+            constructor(Capacity) {
+                this.capacity = capacity;
+            }
+            setCapacity(newCapacity) {
+                this.capacity = newCapacity;
+            }
+
+            getCapacity() {
+                return this.capacity;
+            }
+        }
+
+
+        // if (cents < 0 || cents > 100) {
+        //     throw new Error("Invalid cents value: " + cents);
+        // }
+        // this.cents = cents;
+        // this.contextMess = '';
+        // this.receiveBox = '';
+        // this.outBox = '';
+        // this.isOn = true;
+
+        typingMess(str) {
+            if (!this.isOn) {
+                return 0;
+            } else {
+                return this.contextMess += str;
+                this.consume();
+            }
+
+        }
+        receiveMess(contextMess) {
+            if (!this.isOn) {
+                return 0;
+            } else {
+                this.receiveBox += contextMess;
+                this.consume();
+            }
+        }
+        this.sendMess (otherPhone) {
+            if (!this.isOn) {
+                return;
+            } else {
+                otherPhone.receiveMess(this.contextMess);
+                this.outBox = this.contextMess;
+                this.contextMess = "";
+                this.consume();
+            }
+
+        }
+
+    }
+    var nokia = new Mobile(50);
+    var iphone = new Mobile(47);
+    console.log(nokia, iphone);// before
+    nokia.typingMess('fdxgchdfdsgdsg');
+    nokia.sendMess(iphone);
+    nokia.outBox;
+    console.log(nokia, iphone);// after
+</script>
 </body>
+
 </html>

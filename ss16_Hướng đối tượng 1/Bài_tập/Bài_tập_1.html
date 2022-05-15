@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Rectangle </title>
+</head>
+<body>
+    <script>
+        class Rectangle{
+            constructor(length,width) {
+                this.length = length;
+                this.width = width;
+            }
+            setLength(newLength){
+                this.length = newLength;
+            }
+            getLength(){
+                return this.length;
+            }
+            setWidth(newWidth){
+                this.width = newWidth;
+            }
+            getWidth(){
+                return this.width;
+            }
+            areaOfRectangle(){
+                let s = this.length * this.width;
+                return s;
+            }
+            circumferenceOfRectangle() {
+                let p = (this.length + this.width) * 2;
+                return p;
+            }
+        }
+        let rectangle = new Rectangle(5,3);
+        document.write("The length of Rectangle is: "+rectangle.getLength() +"<br>");
+        document.write("The width of Rectangle is: "+rectangle.getWidth() +"<br>");
+        document.write("The area of Rectangle is: "+rectangle.areaOfRectangle()+"<br>");
+        document.write("The circumference of Rectangle is: "+rectangle.circumferenceOfRectangle());
+        document.write("<br>"+"<br>");
+        rectangle.setLength(4);
+        rectangle.setWidth(6);
+        document.write("The length of Rectangle after updating is: "+rectangle.getLength() +"<br>");
+        document.write("The width of Rectangle after updating is: "+rectangle.getWidth() +"<br>");
+        document.write("The area of Rectangle after updating is: "+rectangle.areaOfRectangle() +"<br>");
+        document.write("The circumference of Rectangle after updating is: "+rectangle.circumferenceOfRectangle() +"<br>");
+    </script>
+
+</body>
+</html>
