@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva </title>
 </head>
 <body>
-$END$
+    <h2 style="text-align: center"> The app decribing the story of Adam and Eva </h2>
+    <script>
+        class Apple{
+            constructor(weight) {
+                this.weight = weight;
+            }
+            setWeight(newWeight){
+                this.weight = newWeight;
+            }
+            getAppleWeight(){
+                return this.weight;
+            }
+            isEmpty(){
+                if(this.weight <= 0){
+                    return true;
+                }
+                return false;
+            }
+            decrease() {
+                if (this.weight > 0) {
+                    this.weight--;
+                }
+            }
+        }
+        class Human{
+            constructor(name,gender,weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+            setApple(newApple) {
+                this.apple = newApple;
+            }
+            getApple(){
+                return this.apple.getAppleWeight();
+            }
+            setName(newName){
+                this.name = newName;
+            }
+            getName(){
+                return this.name;
+            }
+            setGender(boolean){
+                this.gender = boolean;
+            }
+            getGender(){
+                return this.gender;
+            }
+            setWeight(newWeight){
+                this.weight = newWeight;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            isMale(){
+                if(this.gender == false)
+                    return "Female";
+                return "Male";
+            }
+            eatApple(){
+                if(this.apple.isEmpty())
+                    document.write("Ate all the apples!");
+                else{
+                    this.apple.decrease();
+                    document.write("Ate 1 apple and The number of apples left is: "+this.getApple());
+                }
+            }
+            say(string){
+                return this.string = string;
+            }
+        }
+        let apple = new Apple(10);
+        let human = new Human("Adam",true,"100kg");
+        document.write("Name: "+human.getName()+" - Gender: "+human.isMale()+" - Weight: "+human.getWeight()+"<br>");
+        document.write("he told: "+human.say("Tôi yêu em ở mọi vũ trụ."));
+        document.write("<br>"+"<br>");
+        human.setApple(apple);
+        for (let i=0; i<=10;i++){
+            human.eatApple();
+            document.write("<br>");
+        }
+    </script>
+
 </body>
 </html>

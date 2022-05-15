@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn </title>
+</head>
+<body>
+    <h2 style="text-align: center"> The interaction between light and Switch button. </h2>
+    <script>
+        class ElectricLamp{
+            constructor(status) {
+                this.status = status;
+            }
+            setActive(newStatus){
+                this.status = newStatus;
+            }
+            getActive(){
+                if(this.status == true){
+                    document.write("The Electric Lamp is on.");
+                    return this.status;
+                }
+                else {
+                    document.write("The Electric Lamp is off.");
+                    return this.status;
+                }
+            }
+            turnOn(){
+                this.status = true;
+                return this.status;
+            }
+            turnOff(){
+                this.status = false;
+                return this.status;
+            }
+        }
+        class SwitchButton{
+            setActiveLamp(newStatusLamp){
+                this.statusLamp = newStatusLamp;
+            }
+            getActiveLamp(){
+                return this.statusLamp.getActive();
+            }
+            connectToLamp(electric){
+                this.electric = electric;
+                if (this.statusLamp == true && this.electric == true){
+                    document.write("Đã bật điện và đèn sáng <br>");
+                }else if(this.statusLamp == false && this.electric == true){
+                    document.write("Chưa cắm ổ điện <br>");
+                }else if(this.statusLamp == true && this.electric == false){
+                    document.write("Chưa bật công tắc đèn <br>");
+                }else{
+                    document.write("Chưa bật công tắc đèn và cắm điện <br>");
+                }
+            }
+            switchOn(){
+                return this.statusLamp = true;
+            }
+            switchOff(){
+                return this.statusLamp = false;
+            }
+        }
+        let electricLamp = new ElectricLamp();
+        let switchButton = new SwitchButton();
+        let turnOn = electricLamp.turnOn();
+        let turnOff = electricLamp.turnOff();
+
+        electricLamp.turnOn();
+        electricLamp.getActive();
+        document.write("<br>"+"<br>");
+        electricLamp.turnOff();
+        electricLamp.getActive();
+        document.write("<br>"+"<br>");
+
+        document.write("Các trường hợp xảy ra của bóng đèn: "+"<br>"+"<br>");
+        document.write("+ Trường hợp 1:"+"<br>");
+        switchButton.switchOn();
+        switchButton.connectToLamp(turnOn);
+        document.write("<br>");
+
+        document.write("+ Trường hợp 2:"+"<br>");
+        switchButton.switchOff();
+        switchButton.connectToLamp(turnOn);
+        document.write("<br>");
+
+        document.write("+ Trường hợp 3:"+"<br>");
+        switchButton.switchOn();
+        switchButton.connectToLamp(turnOff);
+        document.write("<br>");
+
+        document.write("+ Trường hợp 4:"+"<br>");
+        switchButton.switchOff();
+        switchButton.connectToLamp(turnOff);
+
+
+    </script>
+</body>
+</html>

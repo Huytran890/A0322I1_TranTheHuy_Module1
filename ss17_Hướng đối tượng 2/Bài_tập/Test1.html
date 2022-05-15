@@ -2,9 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột </title>
 </head>
 <body>
-$END$
+<script>
+    class Rat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+        checkRatDie(check) {
+            this.ratDie = check;
+        }
+        setName(newName){
+            this.name = newName;
+        }
+        getName(){
+            return this.name;
+        }
+        setWeight(newWeight){
+            this.weight = newWeight;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        setSpeed(newSpeed){
+            this.speed = newSpeed
+        }
+        getSpeed() {
+            return this.speed;
+        }
+
+        checkStatus() {
+            if (this.status == false) {
+                console.log("Mouse "+ this.name+" is dead")
+                return false;
+            }
+            console.log("Mouse "+this.name+" is alive")
+            return true;
+        }
+
+        life() {
+            this.status = true;
+        }
+        die() {
+            this.status = false;
+        }
+        ratSay() {
+            console.log("Chít chít");
+        }
+    }
+
+    class Cat{
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+        setSpeedCat(newSpeed){
+            this.speed = newSpeed;
+        }
+        getSpeedCat() {
+            return this.speed;
+        }
+        setWeightCat(newWeight){
+            this.weight = newWeight;
+        }
+        getWeightCat() {
+            return this.weight;
+        }
+        setNameCat(newName){
+            this.name = newName;
+        }
+        getNameCat() {
+            return this.name;
+        }
+        getRat = function (rat) {
+            this.rat = rat;
+        }
+        getInfoRat = function () {
+            this.info = "Name: "+this.rat.getName()+" - Weight: "+this.rat.getWeight()+" kg - Speed:"+this.rat.getSpeed()+" km/h";
+            return this.info;
+        }
+        getInfoCat() {
+            this.infoCat = "Name: "+this.name+" - Weight: "+this.weight+" kg - Speed:"+this.speed+" km/h";
+            return this.infoCat;
+        }
+        catSay() {
+            console.log("Meo Meo");
+        }
+        catchRat() {
+            if (this.rat.checkStatus()) {
+                if (this.rat.getSpeed() > this.speed){
+                    console.log(this.rat.getName()+" ran away because it was faster.");
+                }else{
+                    this.weight += this.rat.getWeight();
+                    console.log(this.name+" ate the "+this.rat.getName()+" and gain "+this.rat.getWeight()+" kg = "+this.weight+" kg");
+                }
+            }else {
+                this.rat.getName();
+                console.log(this.name+" no appetite ");
+            }
+        }
+    }
+
+    let mouse1 = new Rat("Jelly", 2, 30);
+    let mouse2 = new Rat("Binkey", 4, 40);
+    let cat = new Cat("Tom", 12, 35);
+    console.log(cat.getInfoCat());
+    cat.getRat(mouse1);
+    mouse1.die();
+    console.log(cat.getInfoRat());
+    cat.catchRat();
+    mouse1.life();
+    cat.catchRat();
+    mouse2.life();
+    cat.getRat(mouse2);
+    console.log(cat.getInfoRat());
+    cat.catchRat();
+</script>
 </body>
 </html>
