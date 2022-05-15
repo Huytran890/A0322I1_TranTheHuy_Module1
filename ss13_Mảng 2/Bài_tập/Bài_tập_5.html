@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Luyện tập mảng 2 </title>
 </head>
 <body>
-$END$
+    <input type="button" value="Bài 1" onclick="ex1()"> Viết chương trình in ra mảng đã cho.
+    <br> <br/><input type="button" value="Bài 2" onclick="ex2()"> Viết chương trình đảo ngược mảng đã cho.
+    <br> <br/><input type="button" value="Bài 3" onclick="ex3()"> Tìm số lượng chữ số có trong mảng.
+    <br> <br/><input type="button" value="Bài 4" onclick="ex4()"> Đếm số từ có trong một chuỗi.
+    <br> <br/><input type="button" value="Bài 5" onclick="ex5()"> kiểm tra xem hai chuỗi có giống nhau hay không.
+    <br> <br/><input type="button" value="Bài 6" onclick="ex6()"> Tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ ).
+    <script>
+        function ex1() {
+            let arr = [ [1,2,1,24],
+                        [1,2,1,24],
+                        [1,2,1,24],
+                        [1,2,1,24],
+                        [1,2,1,24]
+                        ];
+            for (let i=0; i<arr.length; i++){
+                document.write("row is: " +i+ "<br/>");
+                for( let j=0; arr[i].length; j++)
+                    document.write("value at" +j+ "is: "+arr[i][j]);
+            }
+        }
+
+        function ex2() {
+            let arr = new Array("c","s","c","2","6","1");
+            let temp;
+            document.write("The origin array is: "+ arr.toString()+ "<br>");
+            for ( let i=0; i< (arr.length / 2); i++ ){
+                    temp = arr[i];
+                    arr[i] = arr[arr.length - i - 1];
+                    arr[arr.length - i - 1] = temp;
+            }
+            document.write("The array after reversing is: " +arr +" ");
+        }
+
+        function ex3() {
+            let arr = [1, "A", 31, "B",53,72,"C",10];
+            let count=0;
+            let num ='';
+            document.write("The original array is: [" +arr+ "]<br>");
+            for(let i=0 ;i<arr.length; i++){
+                if(arr[i] % 2==0 || arr[i] % 2==1 ){
+                    count++;
+                    num += arr[i] +" ; ";
+                }
+            }
+            document.write("The number in array is: "+num+ "and quatity is: " +count);
+        }
+
+        function ex4() {
+            let arr =  [    ["Hôm", "qua", "trao", "nhau","món","quà"],
+                            ["Hôm","nay","ta","thành","người","lạ"],
+                            ["Tại","sao","là","tại","sao"]
+                        ];
+            for (let i=0; i<arr.length; i++){
+                for (let j=0; j<arr[i].length; j++){
+                    document.write(arr[i][j]+ " ");
+                }
+                document.write("<br>");
+                document.write("The array [" +arr[i]+ "] has " +arr[i].length+ " character in array. <br> <br>");
+            }
+        }
+
+        function ex5() {
+            let arr1 = prompt("Please enter the elements in array 1: ");
+            let arr2 = prompt("Please enter the elements in array 2: ");
+            let compare = true;
+            document.write("The array 1: " + arr1 + "<br>" + "The array 2: " + arr2 + "<br>");
+            if (arr1.length != arr2.length) {
+                document.write("Two string are not the same!!! " + "<br>");
+            } else {
+                for (let i = 0; i < arr1.length; i++) {
+                    for (let j = 0; j < arr2.length; j++) {
+                        if (arr1[i] == arr2[j]) {
+                            compare == true;
+                        } else {
+                            compare == false;
+                        }
+                    }
+                }
+                if (compare == false) {
+                    document.write("Two string are not the same!!! " + "<br>");
+                } else {
+                    document.write("Two string are the same. " + "<br>");
+                }
+            }
+        }
+
+        function ex6() {
+            let arr = new Array(prompt("Please enter the elements in array: "));
+            let fixArray = new Array();
+            document.write("The original array is: [" +arr+ "]" + "<br>");
+            for (let i=0; i<arr.length ; i++){
+                for (let j=0; j<arr[i].length; j++){
+                    if(arr[i][j] == "-"){
+                        arr[i][j] = "_";
+                        fixArray.push("_");
+                    }else{
+                        fixArray.push(arr[i][j]);
+                    }
+                }
+            }
+            document.write("The array after editing is: ["+fixArray.join("") + "]" + "<br>");
+        }
+    </script>
+
 </body>
 </html>

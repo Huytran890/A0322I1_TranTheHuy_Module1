@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Dictionary </title>
 </head>
+    <h1 style="color: red " align="center"> Dictionary </h1>
+    <input type="text" id="english" >
+
+    <input type="button" value="Translate" onclick="Translate()">
+    <br><br>
+    <p id="vietnamese"> </p>
 <body>
-$END$
+    <script>
+        let english = document.getElementById("english")
+        let array1 = ["hello","assigment","study","table","computer","mouse","smart phone","glass","shelf"];
+        let array2 = ["xin chào","nhiệm vụ","học tập","cái bàn","máy tính","con chuột","điện thoại thông minh","cái ly","cái kệ sách"];
+        document.write("Chỉ có thể dịch được các từ ["+array1.join(" ; ")+"]");
+        let dem =0;
+        let i=0;
+        function Translate() {
+            for (i = 0; i < array1.length; i++) {
+                if (array1[i] == english.value) {
+                    dem++;
+                    document.getElementById("vietnamese").innerHTML = array2[i];
+                    break;
+                }
+            }
+            if(array1[i] != english.value)
+                alert("Invaled value!");
+        }
+    </script>
+
 </body>
 </html>

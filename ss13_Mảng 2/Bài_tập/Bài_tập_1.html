@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Print a array in example</title>
+    <input style="background-color: red" type="button" value="Print" onclick="printArray();"/> In giá trị của mảng ra màn hình.
+    <br/> <br/>
+    <input style="background-color: yellow" type="button" value="Print" onclick="addSymbolToArray();"/> In dấu (-) giữa các số chẵn có trong chuỗi.
+    <br/> <br/>
+    <input style="background-color: green" type="button" value="Print" onclick="swapTypeOfCharacter('Huy Đam Mê Học Lập Trình.');"/> Chuyển đổi Kiểu chữ hoa hay thường trong chuỗi.
 </head>
 <body>
-$END$
+    <script>
+        function printArray() {
+            myColor = ["Red","Green","white","black"];
+            document.write("The values is available in array: " +myColor.toString()+"<br/>");
+            document.write("The values is available in array after add ';' is: " +myColor.join(' ; '));
+        }
+        function addSymbolToArray() {
+            let num = window.prompt("Please enter the number :");
+            let str = num.toString();
+            let result = [str[0]];
+            for(let i=0; i<str.length;i++){
+                if((str[i] % 2 ==0) && (str[i-1] %2 ==0))// nếu là số chẵn thì thêm dấu (-) vào.
+                    result.push('-'+str[i]);
+                else    // nếu là số lẻ thì thêm dấu (+) vào.
+                    result.push('+'+str[i]);
+            }
+            document.write(result.join(''));
+        }
+        function swapTypeOfCharacter(str) {
+            let result = [];
+            const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+            for(let x=0; x<str.length; x++)
+            {
+                if(UPPER.includes(str[x]))
+                    result.push(str[x].toLowerCase());
+                else if(LOWER.includes(str[x]))
+                    result.push(str[x].toUpperCase());
+                else
+                    result.push(str[x]);
+            }
+            document.write(result.join(''));
+        }
+    </script>
+
 </body>
 </html>

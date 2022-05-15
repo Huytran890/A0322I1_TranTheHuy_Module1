@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Luyện tập mảng 1 </title>
+</head>
+<body>
+    <input type="button" value="Bài 1" onclick="ex1()"> Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+    <br> <br/><input type="button" value="Bài 2" onclick="ex2()"> Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+    <br> <br/><input type="button" value="Bài 3" onclick="ex3()"> Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+    <br> <br/><input type="button" value="Bài 4" onclick="ex4()"> Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    <br> <br/><input type="button" value="Bài 5" onclick="ex5()"> Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    <br> <br/><input type="button" value="Bài 6" onclick="ex6()"> Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+    <br> <br/><input type="button" value="Bài 7" onclick="ex7()"> Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+    <br> <br/><input type="button" value="Bài 8" onclick="ex8()"> Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    <br> <br/><input type="button" value="Bài 9" onclick="ex9()"> Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
+
+    <script>
+        function ex1() {
+            let arr = new Array();
+            let arrGreatThanTen = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+            for(let i=0 ;i<n; i++){
+                arr[i] = Number(prompt("Enter numbers into array "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+
+            for (let i=0; i<arr.length; i++){
+                if(arr[i]>10){
+                    arrGreatThanTen.push(arr[i]);
+                }
+            }
+            document.write("The elements greater than 10 in array are: [" +arrGreatThanTen+ "]<br>");
+        }
+
+        function ex2() {
+            let arr = new Array();
+            let max = 0, index = 0;
+            let n = Number(prompt("Please enter the number of elements in array: "));
+
+            for(let i=0 ;i<n; i++){
+                arr[i] = Number(prompt("Enter numbers into array: "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+
+            for (let i=0; i<arr.length; i++){
+                if(max< arr[i]){
+                    max = arr[i];
+                    index = i;
+                }
+            }
+            document.write("The largest element in the array is: "+ max + " at index: [" +index+ "]");
+        }
+
+        function ex3() {
+            let arr = new Array();
+            let max = 0, index = 0, average = 0;
+            let n = Number(prompt("Please enter the number of elements in array: "));
+
+            for(let i=0 ;i<n; i++){
+                arr[i] = Number(prompt("Enter numbers into array: "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+
+            for (let i=0; i<arr.length; i++){
+                if(max< arr[i]){
+                    max = arr[i];
+                    index = i;
+                }
+                average += arr[i];
+            }
+            average = average / arr.length;
+            document.write("The largest element in the array is: "+ max + " at index: [" +index+ "] <br/>");
+            document.write("The average of the elements in array is: "+average);
+        }
+
+        function ex4() {
+            let arr = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+
+            for(let i=0 ;i<n; i++){
+                arr[i] = Number(prompt("Enter numbers into array: "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+
+            document.write("The array after reversing is: [" +arr.reverse()+ "]<br>");
+        }
+
+        function ex5() {
+            let arr = new Array();
+            let arrNegative = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+
+            for (let i = 0; i < n; i++) {
+                arr[i] = Number(prompt("Enter numbers into array: "));
+                if (arr[i]<0){
+                    arrNegative.push(arr[i])
+                }
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+            document.write("The array of negative number is: [" +arrNegative+ "]<br>");
+        }
+
+        function ex6() {
+            let arr = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+
+            for (let i = 0; i < n; i++) {
+                arr[i] = prompt("Enter numbers into array: ");
+                if (arr[i] == "V") {
+                    var exist = true;
+                }
+            }
+            document.write("The original array is: [" + arr + "]<br>");
+            if (exist == true) {
+                document.write("V is in the array")
+            } else {
+                document.write("V is not in the array")
+            }
+        }
+
+        function ex7() {
+            let arr = new Array();
+            let arrNew = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+
+            for (let i = 0; i < n; i++) {
+                arr[i] = prompt("Enter numbers into array: ");
+                if(arr[i] == "V"){
+                    var exist = true;
+                }
+                if (arr[i] != "V"){
+                    arrNew.push(arr[i])
+                }
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+            if(exist == true){
+                document.write("Removed V element from array: [" +arrNew+ "]<br>");
+            }
+        }
+
+        function ex8() {
+            let arr = new Array();
+            let min = 0 ;
+            let n = Number(prompt("Please enter the number of elements in array: "));
+
+            for (let i = 0; i < n; i++) {
+                arr[i] = Number(prompt("Enter numbers into array: "));
+            }
+            document.write("The original array is: [" +arr+ "]<br>");
+
+            for (let i=0; i< arr.length-1; i++){
+                for (let j=i+1; j<arr.length; j++) {
+                    if (arr[i] < arr[j]) {
+                        min = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = min;
+                    }
+                }
+            }
+            document.write("Sort from largest to smallest in array: [" +arr+ "]<br>");
+        }
+
+        function ex9() {
+            let arr1 = new Array();
+            let arr2 = new Array();
+            let arr3 = new Array();
+            let n = Number(prompt("Please enter the number of elements in array: "));
+            for (let i = 0; i < n; i++) {
+                let a = Number(prompt("Enter numbers into 1 array: "));
+                arr1.push(a);
+            }
+            for (let j = 0; j < n; j++) {
+                let b = Number(prompt("Enter numbers into 2 array: "));
+                arr2.push(b);
+            }
+            document.write("The original 1 array is: [" + arr1 + "] <br>");
+            document.write("The original 2 array is: [" + arr2 + "] <br>");
+            arr3 = arr1;
+            for (let i = 0; i < arr2.length; i++) {
+                arr3.push(arr2[i]);
+            }
+            document.write("The original 3 array is: [" +arr3+ "] <br>");
+        }
+    </script>
+</body>
+</html>
+
+
