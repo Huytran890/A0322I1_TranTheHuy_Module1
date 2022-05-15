@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Circle </title>
 </head>
 <body>
-$END$
+    <script>
+        class Circle{
+            constructor(radius) {
+                this.radius = radius;
+            }
+            setRadius(newRadius){
+                this.radius = newRadius;
+            }
+            getRadius(){
+                return this.radius;
+            }
+            areaOfCicle(){
+                let s = this.radius * this.radius * Math.PI;
+                return s;
+            }
+            circumferenceOfCircle() {
+                let c = this.radius * 2 * Math.PI;
+                return c;
+            }
+        }
+        let circle = new Circle(3);
+        document.write("The Radius is: " +circle.getRadius()+ "<br>" + "The Area is: "+circle.areaOfCicle());
+        document.write("<br>");
+        document.write("The circumference is: "+circle.circumferenceOfCircle());
+    </script>
+
+
 </body>
 </html>
